@@ -36,7 +36,7 @@ def main():
     pause = False
     pygame.event.get()
     keys = pygame.key.get_pressed()
-    UI = pygame.mixer.music.load("Ultra Instinct Theme Music.mp3")#load music from file
+    UI = pygame.mixer.music.load("PongGame-Pygame\\Ultra Instinct Theme Music.mp3") #load music from file
     pygame.mixer.music.play(-1)#loop the music
     dank = False
 #Main loop
@@ -78,7 +78,7 @@ def main():
                 game_window.fill(BLACK) 
                 Paddle = pygame.draw.rect(game_window,PINK,(paddleX, paddleY,6,120))
                 Paddle2 = pygame.draw.rect(game_window,RED,(paddleX2, paddleY2,6,120))
-                ball = pygame.image.load("Shrek.png")#load the image "Shrek.png" and import it as the ball
+                ball = pygame.image.load("C:\\Users\\Jacky\\Desktop\\Python test\\PongGame-Pygame\\Shrek.png")#load the image "Shrek.png" and import it as the ball
                 ball = pygame.transform.scale(ball,(50,50))#adjust the image size
                 ball = game_window.blit(ball,(BallX,BallY))#display the ball using the ball coordinates 
                 graphics_score1 = font.render("Score: "+str(score1),1,WHITE) #set the scores for player 1 and 2
@@ -121,17 +121,17 @@ def main():
                 paddleRect = pygame.Rect(Paddle2)
                 if ballRect.colliderect(paddleRect):#if an object colides with another object, paddle and the ball in this case
                     if dank == False:
-                        ballsound = pygame.mixer.Sound("Hit 1.wav")#load sound effect from the file and set a variable for it
+                        ballsound = pygame.mixer.Sound("PongGame-Pygame\\Hit 1.wav")#load sound effect from the file and set a variable for it
                     if dank == True:
-                        ballsound = pygame.mixer.Sound("Bruh.wav")
+                        ballsound = pygame.mixer.Sound("PongGame-Pygame\\Bruh.wav")
                     ballsound.play()#play the sound effect
                     speedX = speedX * -1# Then change the x coordinates of the ball
                 if BallY == 0:
-                    wallsound = pygame.mixer.Sound("Coin 3.wav")#load sound effect from the file and set a variable for it
+                    wallsound = pygame.mixer.Sound("PongGame-Pygame\\Coin 3.wav")#load sound effect from the file and set a variable for it
                     wallsound.play()
                     speedY = speedY * -1
                 if BallY > 550:
-                    wallsound = pygame.mixer.Sound("Coin 3.wav")#load sound effect from the file and set a variable for it
+                    wallsound = pygame.mixer.Sound("PongGame-Pygame\\Coin 3.wav")#load sound effect from the file and set a variable for it
                     wallsound.play()
                     speedY = speedY * -1
                 if BallX > 1000:
@@ -170,20 +170,20 @@ def main():
                 paddleRect = pygame.Rect(Paddle)
                 if ballRect.colliderect(paddleRect):
                     if dank == False:
-                        ballsound = pygame.mixer.Sound("Hit 1.wav")#load sound effect from the file and set a variable for it
+                        ballsound = pygame.mixer.Sound("PongGame-Pygame\\Hit 1.wav")#load sound effect from the file and set a variable for it
                     if dank == True:
-                        ballsound = pygame.mixer.Sound("Bruh.wav")
+                        ballsound = pygame.mixer.Sound("PongGame-Pygame\\Bruh.wav")
                     ballsound.play()
                     speedX = speedX * -1
                 #-------------#
                 if score1 == 5:
                     pygame.mixer.music.stop()
-                    victory = pygame.mixer.Sound("Mario Victory.wav")#load sound effect from the file and set a variable for it
+                    victory = pygame.mixer.Sound("PongGame-Pygame\\Mario Victory.wav")#load sound effect from the file and set a variable for it
                     victory.play()
                     score1 += 1
                 if score1 == 6 or score2 == 6:
                     game_window.fill(BLACK)
-                    graphics_developer = font.render('''By Justin Ho and Revised by Jacky''',1,YELLOW)
+                    graphics_developer = font.render('''By Jacky and Justin  ''',1,YELLOW)
                     game_window.blit(graphics_developer,(1,1))
                     graphics_r = font.render("Press R to restart",1,YELLOW)
                     game_window .blit(graphics_r, (450, 475))
@@ -206,7 +206,7 @@ def main():
                         
                 if score2 == 5:
                     pygame.mixer.music.stop()#stop the music
-                    victory = pygame.mixer.Sound("Mario Victory.wav")#load sound effect from the file and set a variable for it
+                    victory = pygame.mixer.Sound("PongGame-Pygame\\Mario Victory.wav")#load sound effect from the file and set a variable for it
                     victory.play()
                     score2 +=1
                     
